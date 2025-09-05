@@ -4,11 +4,15 @@ import numpy as np
 import joblib
 from models.custom_transformers import RiskClusterTransformer
 import cloudpickle
+import os
+
+BASE_DIR = os.path.dirname(__file__)  # folder where this script lives
 
 # Paths to your saved models
-RISK_CLUSTER_PATH = "models/risk_cluster.pkl"
-PREPROCESSOR_PATH = "models/preprocessor.pkl"
-VOTING_MODEL_PATH = "models/Vote.pkl"
+PREPROCESSOR_PATH = os.path.join(BASE_DIR, "models", "preprocessor.pkl")
+RISK_CLUSTER_PATH = os.path.join(BASE_DIR, "models", "risk_cluster.pkl")
+VOTING_MODEL_PATH = os.path.join(BASE_DIR, "models", "Vote.pkl")
+
 
 # Internal caches
 _preprocessor = None
