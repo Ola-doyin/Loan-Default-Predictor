@@ -35,9 +35,11 @@ def get_models():
     Prevents Streamlit import issues with pickle.
     """
     global _preprocessor, _risk_cluster, _voting_model
-    print("Preprocessor exists:", os.path.exists(PREPROCESSOR_PATH))
-    print("Risk cluster exists:", os.path.exists(RISK_CLUSTER_PATH))
-    print("Voting model exists:", os.path.exists(VOTING_MODEL_PATH))
+
+    # For debugging purposes, uncomment these:
+    # print("Preprocessor exists:", os.path.exists(PREPROCESSOR_PATH))
+    # print("Risk cluster exists:", os.path.exists(RISK_CLUSTER_PATH))
+    # print("Voting model exists:", os.path.exists(VOTING_MODEL_PATH))
 
     if _preprocessor is None:
         _preprocessor = joblib.load(PREPROCESSOR_PATH)
