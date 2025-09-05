@@ -6,11 +6,11 @@ import random
 import string
 from customer_backend import predict_returning_customer
 from models.custom_transformers import RiskClusterTransformer
+import os
 
 
-# Example: load your customer data (replace with your DB or CSV)
-customer_data = pd.read_csv("customer_data.csv", index_col="customerid")
-
+BASE_DIR = os.path.dirname(__file__)  # path of the current script
+customer_data = pd.read_csv(os.path.join(BASE_DIR, "customer_data.csv"), index_col="customerid")
 
 st.title("Loan Application Portal")
 
